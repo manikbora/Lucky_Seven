@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.luckyseven.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_spinFragment"
+            app:destination="@id/spinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spinFragment"
+        android:name="com.example.luckyseven.SpinFragment"
+        android:label="fragment_spin"
+        tools:layout="@layout/fragment_spin" >
+        <action
+            android:id="@+id/action_spinFragment_to_prizeFragment"
+            app:destination="@id/prizeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/prizeFragment"
+        android:name="com.example.luckyseven.PrizeFragment"
+        android:label="fragment_prize"
+        tools:layout="@layout/fragment_prize" >
+        <action
+            android:id="@+id/action_prizeFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+</navigation>
